@@ -7,7 +7,6 @@ class Greeting {
         return "Hello, ${platform.name}!"
     }
 
-    fun getName():String = "Jayant"
-
     val test = "Hey this is test"
+    val name = "M"
 }

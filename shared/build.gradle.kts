@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     android()
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -18,11 +18,10 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting{
+        val commonMain by getting {
             dependencies {
                 implementation(Ktor.ktorCoreClient)
                 implementation(Coroutines.coroutineCore)
-                implementation(Coroutines.coroutineAndroid)
                 implementation(Koin.core)
                 implementation(Ktor.serialization)
                 implementation(Ktor.clientLogging)
@@ -36,7 +35,7 @@ kotlin {
                 implementation(Koin.test)
             }
         }
-        val androidMain by getting{
+        val androidMain by getting {
             dependencies {
                 implementation(Ktor.ktorClientOkhttp)
                 implementation(Koin.android)
@@ -53,8 +52,11 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
                 implementation(Ktor.ktorClientDarwin)
+                implementation(Koin.core)
+                implementation(Ktor.ktorCoreClient)
             }
         }
+
         val iosX64Test by getting
         val iosArm64Test by getting
         val iosSimulatorArm64Test by getting

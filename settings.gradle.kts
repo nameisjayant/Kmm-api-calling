@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "kmm_project"
 include(":androidApp")
 include(":shared")
+include(":iosApp")

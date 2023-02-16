@@ -3,11 +3,9 @@ import shared
 
 struct ContentView: View {
 	let greet = Greeting().greet()
-    let name = Greeting().getName()
-    let test = Greeting().test
 
 	var body: some View {
-		Text("Hey \(test)")
+		Text(greet)
 	}
 }
 
