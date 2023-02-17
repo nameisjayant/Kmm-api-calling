@@ -18,8 +18,16 @@ struct ContentView: View {
             } else if case .success(let data) = viewModel.postState{
                 VStack{
                     ForEach(data, id: \.id) { data in
-                        Text(data.body)
-                            .padding()
+                        VStack(alignment : .leading){
+                            Text("ID : \(data.id)")
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
+                                .padding(.all,5)
+                            Text(data.body)
+                                .foregroundColor(.gray)
+                                .font(.body)
+                                .padding(.all,5)
+                        }
                     }
                 }
             } else if case .error(_) = viewModel.postState{
