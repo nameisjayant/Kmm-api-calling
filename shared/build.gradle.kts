@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlinx-serialization")
+    id("com.rickclephas.kmp.nativecoroutines") version "0.13.3"
 }
 
 kotlin {
@@ -39,6 +40,7 @@ kotlin {
             dependencies {
                 implementation(Ktor.ktorClientOkhttp)
                 implementation(Koin.android)
+                implementation(Ktor.ktorAndroid)
             }
         }
         val androidTest by getting

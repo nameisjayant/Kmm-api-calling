@@ -31,6 +31,7 @@ object Ktor {
     const val clientLogging = "io.ktor:ktor-client-logging:${Versions.ktorVersion}"
     const val contentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktorVersion}"
     const val json = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktorVersion}"
+    const val ktorAndroid = "io.ktor:ktor-client-android:${Versions.ktorVersion}"
 
 }
 
