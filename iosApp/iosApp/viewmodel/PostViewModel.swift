@@ -28,14 +28,14 @@ class PostViewModel : ObservableObject{
         Task{
             postState = .loading
             do{
-               // let nativeFlow = try await asyncFunction(for: postRepository.getPostForIos())
-//                let stream = asyncStream(for: [Post(id: 1, body: "Hey")])
-//
-//                for try await data in stream {
-//                    postState = .success(data: data)
-//                }
-                let posts = try await postRepository.getPostTest()
-                postState = .success(data: posts)
+                let nativeFlow = try await asyncFunction(for: postRepository.getPostForIosNative())
+                let stream = asyncStream(for:nativeFlow)
+
+                for try await data in stream {
+                    postState = .success(data: data)
+                }
+//                let posts = try await postRepository.getPostTest()
+//                postState = .success(data: posts)
 
             }catch {
                 postState = .error(error: error)

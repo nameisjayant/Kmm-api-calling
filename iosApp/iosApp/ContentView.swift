@@ -16,18 +16,17 @@ struct ContentView: View {
                         .foregroundColor(.orange)
                 }
             } else if case .success(let data) = viewModel.postState{
-                VStack{
+                VStack(alignment : .leading){
                     ForEach(data, id: \.id) { data in
                         VStack(alignment : .leading){
                             Text("ID : \(data.id)")
                                 .foregroundColor(.black)
                                 .font(.largeTitle)
-                                .padding(.all,5)
                             Text(data.body)
                                 .foregroundColor(.gray)
                                 .font(.body)
-                                .padding(.all,5)
-                        }
+                                .padding(.top,5)
+                        }.padding(10)
                     }
                 }
             } else if case .error(_) = viewModel.postState{
