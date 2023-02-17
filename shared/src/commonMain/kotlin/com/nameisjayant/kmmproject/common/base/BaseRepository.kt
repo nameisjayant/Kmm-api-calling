@@ -19,6 +19,6 @@ abstract class BaseRepository {
 
     }.catch { e ->
         emit(ApiState.Failure(e))
-    }
+    }.flowOn(Dispatchers.Default)
 
 }
