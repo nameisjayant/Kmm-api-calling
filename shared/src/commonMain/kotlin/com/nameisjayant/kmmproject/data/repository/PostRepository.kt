@@ -20,4 +20,6 @@ class PostRepository constructor(
           apiService.getPosts()
       }
     }
+
+    suspend fun getPostTest():List<Post> = apiService.getPosts()
 }

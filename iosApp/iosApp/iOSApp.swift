@@ -1,10 +1,19 @@
 import SwiftUI
+import shared
 
 @main
 struct iOSApp: App {
+    
+    init() {
+      KoinApplication.start()
+    }
+    
+    @StateObject var viewModel:PostViewModel = PostViewModel()
+    
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+            ContentView(viewModel: viewModel)
+    
 		}
 	}
 }
