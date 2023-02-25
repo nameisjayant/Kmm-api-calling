@@ -15,15 +15,15 @@ class PostRepository constructor(
         apiService.getPosts()
     }
 
-//    suspend fun getPostForIos():Flow<List<Post>> {
-//      return execute {
-//          apiService.getPosts()
-//      }
-//    }
-
-    suspend fun getPostForIos() = flow{
-        emit(apiService.getPosts())
+    suspend fun getPostForIos():Flow<List<Post>> {
+      return execute {
+          apiService.getPosts()
+      }
     }
+
+//    suspend fun getPostForIos() = flow{
+//        emit(apiService.getPosts())
+//    }
 
     suspend fun getPostTest():List<Post> = apiService.getPosts()
 }

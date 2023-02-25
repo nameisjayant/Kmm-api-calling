@@ -18,12 +18,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nameisjayant.kmmproject.Greeting
+import com.nameisjayant.kmmproject.android.feature.cat.screens.CatScreen
+import com.nameisjayant.kmmproject.android.feature.ui.viewmodel.CatViewModel
+import com.nameisjayant.kmmproject.android.feature.ui.viewmodel.PostState
 import com.nameisjayant.kmmproject.android.feature.ui.viewmodel.PostViewModel
 import com.nameisjayant.kmmproject.data.model.Post
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
     private val viewModel: PostViewModel by inject()
+    private val catViewModel:CatViewModel by inject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -33,33 +37,43 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    if (response.isLoading) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                            CircularProgressIndicator()
-                        }
-                    }
-                    if (response.error.isNotEmpty()) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                            Text(
-                                text = response.error, style = TextStyle(
-                                    color = Color.Gray,
-                                    fontSize = 16.sp,
-                                    fontWeight = FontWeight.Normal
-                                )
-                            )
-                        }
-                    }
-                    if (response.data.isNotEmpty()) {
-                        LazyColumn{
-                            items(response.data, key = {it.id}){
-                                PostEachRow(post = it)
-                            }
-                        }
-                    }
+              //    PostScreen(response)
+                    CatScreen(viewModel = catViewModel)
                 }
             }
         }
     }
+}
+
+@Composable
+fun PostScreen(
+    response:PostState
+) {
+
+    if (response.isLoading) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+            CircularProgressIndicator()
+        }
+    }
+    if (response.error.isNotEmpty()) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+            Text(
+                text = response.error, style = TextStyle(
+                    color = Color.Gray,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Normal
+                )
+            )
+        }
+    }
+    if (response.data.isNotEmpty()) {
+        LazyColumn{
+            items(response.data, key = {it.id}){
+                PostEachRow(post = it)
+            }
+        }
+    }
+
 }
 
 @Composable

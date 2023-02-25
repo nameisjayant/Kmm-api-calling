@@ -8,6 +8,7 @@ object Versions {
     const val koin = "3.2.0"
     const val kotlinxSerialization = "1.5.0-RC"
     const val coroutine = "1.6.4"
+    const val coil = "2.2.2"
 }
 
 object ConfigData {
@@ -55,4 +56,5 @@ object Compose {
         "androidx.compose.foundation:foundation:${Versions.composeFoundation}"
     const val composeUiToolingPreview =
         "androidx.compose.ui:ui-tooling-preview:${Versions.composeVersion}"
+    const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
 }

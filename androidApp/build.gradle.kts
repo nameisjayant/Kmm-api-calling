@@ -47,5 +47,6 @@ dependencies {
     implementation(Coroutines.coroutineAndroid)
     implementation(Koin.core)
     implementation(Koin.android)
+    implementation(Compose.coilCompose)
 
 }

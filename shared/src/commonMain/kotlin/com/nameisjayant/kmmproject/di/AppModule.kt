@@ -1,6 +1,7 @@
 package com.nameisjayant.kmmproject.di
 
 import com.nameisjayant.kmmproject.data.network.ApiService
+import com.nameisjayant.kmmproject.data.repository.CatRepository
 import com.nameisjayant.kmmproject.data.repository.PostRepository
 import io.ktor.client.*
 import io.ktor.client.plugins.*
@@ -18,13 +19,15 @@ fun init(appDeclaration: KoinAppDeclaration = {}) = startKoin {
 
 }
 
-fun initKoin() = init{}
+fun initKoin() = init {}
 
 fun appModule() = module {
     single { createJson() }
     single { createHttpClient(get()) }
     single { ApiService(get()) }
     factory { PostRepository(get()) }
+    factory { CatRepository(get()) }
+
 }
 
 fun createJson(): Json = Json { isLenient = true; ignoreUnknownKeys = true }
