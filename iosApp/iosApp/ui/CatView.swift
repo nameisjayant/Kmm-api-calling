@@ -26,7 +26,7 @@ struct CatView: View {
                 VStack(alignment : .leading){
                     ForEach(data, id: \.id) { data in
                         HStack{
-                            Spacer()
+
                             if #available(iOS 15.0, *) {
                                 AsyncImage(url: URL(string: data.url ?? ""))
                                     .frame(width: 100,height: 100)
@@ -35,8 +35,7 @@ struct CatView: View {
                                 // Fallback on earlier versions
                                 Text("No Image")
                             }
-                            Spacer()
-                            Spacer()
+                        
                             VStack(alignment : .leading){
                                 Text("Width : \(data.width ?? 0)")
                                     .foregroundColor(.black)
