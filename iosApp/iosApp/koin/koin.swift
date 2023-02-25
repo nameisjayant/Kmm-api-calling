@@ -26,7 +26,7 @@ extension KoinApplication {
   private static let keyPaths: [PartialKeyPath<Koin>] = [
     \.apiService,
      \.postRepository,
-
+     \.catRepository
   ]
 
   static func inject<T>() -> T {

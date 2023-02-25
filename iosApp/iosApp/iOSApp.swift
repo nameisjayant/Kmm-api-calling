@@ -9,11 +9,12 @@ struct iOSApp: App {
     }
     
     @StateObject var viewModel:PostViewModel = PostViewModel()
+    @StateObject var catViewModel : CatViewModel = CatViewModel()
     
 	var body: some Scene {
 		WindowGroup {
-            ContentView(viewModel: viewModel)
-    
+           // ContentView(viewModel: viewModel)
+            CatView(viewModel: catViewModel)
 		}
 	}
 }

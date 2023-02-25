@@ -11,6 +11,8 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		F502E14929AA522F0058DEAA /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502E14829AA522F0058DEAA /* CatViewModel.swift */; };
+		F502E14D29AA53BC0058DEAA /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502E14C29AA53BC0058DEAA /* CatView.swift */; };
 		F51FF9C0299E39EE005ABD49 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FF9BF299E39EE005ABD49 /* PostViewModel.swift */; };
 		F5A3C6C2299F53EC0079B20F /* koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6C1299F53EC0079B20F /* koin.swift */; };
 		F5A3C6C5299F59750079B20F /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6C4299F59750079B20F /* ViewState.swift */; };
@@ -40,6 +42,8 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F502E14829AA522F0058DEAA /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
+		F502E14C29AA53BC0058DEAA /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		F51FF9BF299E39EE005ABD49 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F5A3C6C1299F53EC0079B20F /* koin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = koin.swift; sourceTree = "<group>"; };
 		F5A3C6C4299F59750079B20F /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				F502E14B29AA53AE0058DEAA /* ui */,
 				F5A3C6C3299F59670079B20F /* utils */,
 				F5A3C6C0299F53DE0079B20F /* koin */,
 				F51FF9BE299E39D9005ABD49 /* viewmodel */,
@@ -107,10 +112,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F502E14B29AA53AE0058DEAA /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F502E14C29AA53BC0058DEAA /* CatView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		F51FF9BE299E39D9005ABD49 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
 				F51FF9BF299E39EE005ABD49 /* PostViewModel.swift */,
+				F502E14829AA522F0058DEAA /* CatViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -234,9 +248,11 @@
 			files = (
 				F51FF9C0299E39EE005ABD49 /* PostViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				F502E14D29AA53BC0058DEAA /* CatView.swift in Sources */,
 				F5A3C6C5299F59750079B20F /* ViewState.swift in Sources */,
 				F5A3C6C2299F53EC0079B20F /* koin.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				F502E14929AA522F0058DEAA /* CatViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
