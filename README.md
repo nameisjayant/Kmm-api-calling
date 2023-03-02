@@ -18,4 +18,3 @@ A project which shows how to do api calling in both android and ios through KMM 
 &nbsp;
 <img src="screenshots/four.png" height = "400">
 </p>
-
